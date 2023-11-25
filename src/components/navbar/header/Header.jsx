@@ -5,7 +5,7 @@ import "./Header.css"
 class Header extends Component {
     render() {
         return (
-            <>
+            <header>
                 <nav className="header-menu">
                     <Link to="/" className="header-menu-logo">
                         React To-Do
@@ -23,7 +23,7 @@ class Header extends Component {
                         </li>
                     </ul>
                 </nav>
-            </>
+            </header>
         )
     }
 }

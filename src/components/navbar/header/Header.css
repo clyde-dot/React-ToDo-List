@@ -1,6 +1,6 @@
 .header-menu {
-    background-color: var(--header-bg-color);
-    color: var(--header-font-color);
+    background-color: var(--header-footer-bg-color);
+    color: var(--header-footer-font-color);
     display: flex;
     flex-direction: column;
     gap: 20px;
