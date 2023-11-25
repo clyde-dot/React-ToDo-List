@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Routes, Route } from "react-router-dom"
+
 import "./Main.css"
 //Pages
 import Home from "./home/Home"
