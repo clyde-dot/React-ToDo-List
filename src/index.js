@@ -1,12 +1,19 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
+import { HashRouter, Routes, Route } from "react-router-dom"
+
+//CSS files
+import "./reset.css"
 import "./index.css"
+
+//Setting Web Page
 import "./Settings"
 
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+//Pages
 import Home from "./components/routes/main/Home"
 import About from "./components/routes/about/About"
 
+//Static elements
 import ErrorPage from "./components/routes/error/error-page"
 import Header from "./components/navbar/header/Header"
 import Footer from "./components/navbar/footer/Footer"
@@ -15,7 +22,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 
 root.render(
     <React.StrictMode>
-        <BrowserRouter basename="/">
+        <HashRouter>
             <Header />
             <Routes>
                 <Route
@@ -30,6 +37,6 @@ root.render(
                 />
             </Routes>
             <Footer />
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
 )
