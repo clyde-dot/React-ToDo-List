@@ -1,16 +1,3 @@
-.form-add {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    min-width: 40vw;
-    gap: 10px;
-    color: var(--form-text-color);
-}
-.form-add-title {
-    font-size: 24px;
-    font-weight: 500;
-    color: currentColor;
-}
 .form-add-data {
     font-size: 20px;
     border: 0;
@@ -25,7 +12,7 @@
 .form-add-button {
     border: none;
     background-color: var(--button-bg-color);
-    color: var(--button-color);
+    color: var(--root-color);
     border-radius: 12px;
     min-height: 40px;
     text-align: center;
@@ -39,15 +26,4 @@
 }
 .form-add-button:active {
     transform: scale(0.98);
-    
-}
-@media (max-width: 1005px) {
-    .form-add {
-        min-width: 550px;
-    }
-}
-@media (max-width: 610px) {
-    .form-add {
-        min-width: 85vw;
-    }
 }

@@ -1,0 +1,17 @@
+.task-content {
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    min-height: 50px;
+    font-size: 20px;
+    color: var(--root-color);
+    padding: 5px;
+}
+.task-content-title {
+    padding-bottom: 7px;
+    margin-bottom: 5px;
+    border-bottom: 3px solid var(--root-color);
+}
+.task-content-description {
+    font-size: 18px;
+    line-height: 1.2;
+}

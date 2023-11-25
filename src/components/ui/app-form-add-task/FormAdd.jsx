@@ -5,24 +5,33 @@ const FormAdd = (props) => {
     const [taskName, setTaskName] = useState("")
     const [taskDescription, setTaskDescription] = useState("")
     const [dataTasks, setDataTasks] = useState({})
-
     const handleChangeTaskName = (e) => {
         setTaskName(e.target.value)
     }
     const handleChangeTaskDescription = (e) => {
         setTaskDescription(e.target.value)
     }
-    const handleBtnAdd = (e) => {
+    const handleCheck = () => {
+        console.dir(props)
+    }
+    const handleBtnAdd = () => {
+        if (!taskName || !taskDescription) {
+            alert("Enter task name and description !")
+            return
+        }
         let id = uniqid().toString()
         setDataTasks({
             ...dataTasks,
             [id]: { task: taskName, description: taskDescription },
         })
+        setTaskName("")
+        setTaskDescription("")
+        alert("Task added !")
     }
 
     return (
-        <div className="form-add">
-            <div className="form-add-title">Add task</div>
+        <div className="forms">
+            <div className="form-title">Add task</div>
             <input
                 className="form-add-data form-add-input"
                 type="text"
@@ -40,6 +49,9 @@ const FormAdd = (props) => {
             />
             <button className="form-add-button" onClick={handleBtnAdd}>
                 Add
+            </button>
+            <button className="form-add-button" onClick={handleCheck}>
+                Check Data
             </button>
         </div>
     )
