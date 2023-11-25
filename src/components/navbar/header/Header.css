@@ -1,0 +1,31 @@
+.header-menu {
+    background-color: var(--header-bg-color);
+    color: var(--header-font-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    align-items: center;
+}
+
+.header-menu a {
+    text-decoration: none;
+}
+.header-menu-logo {
+    color: var(--header-logo-color);
+    font-size: 36px;
+    font-weight: 700;
+}
+.header-menu-list {
+    display: flex;
+    gap: 50px;
+}
+
+.header-menu-link {
+    color: currentColor;
+    text-transform: capitalize;
+    transition: var(--anim-duration);
+}
+.header-menu-link:hover {
+    color: rgb(216, 216, 216);
+}

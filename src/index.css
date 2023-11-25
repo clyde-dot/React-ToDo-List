@@ -1,0 +1,11 @@
+:root {
+    --root-font-family: Roboto, Arial, Helvetica, sans-serif;
+    --header-bg-color: rgb(184, 25, 25);
+    --header-logo-color: rgb(255, 255, 255);
+    --header-font-color: rgb(255, 255, 255);
+    --anim-duration: 0.2s;
+}
+body {
+    font-family: var(--root-font-family);
+    
+}
