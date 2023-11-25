@@ -1,8 +1,14 @@
 import React, { Component } from "react"
 import "./Home.css"
 
+import FormAdd from "../../ui/app-form-add-task/FormAdd"
+
 export default class Home extends Component {
     render() {
-        return <>Home Page</>
+        return (
+            <div className="container">
+                <FormAdd />
+            </div>
+        )
     }
 }

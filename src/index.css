@@ -1,9 +1,19 @@
 :root {
     --root-font-family: Roboto, Arial, Helvetica, sans-serif;
-    --header-footer-bg-color: rgb(184, 25, 25);
+    --header-footer-bg-color: #023e8a;
     --header-logo-color: rgb(255, 255, 255);
-    --header-footer-font-color: rgb(255, 255, 255);
+    --header-footer-font-color: #ffffff;
     --anim-duration: 0.2s;
+
+    /*Main settings*/
+    --container-bg-color: #023e8a;
+    --border-radius: 2px;
+    /*Form*/
+
+    --form-text-color: #fff;
+    --button-bg-color: #fcfcfc;
+    --button-bg-color-effect: #f0f0f0;
+    --button-color: #000000;
 }
 body {
     font-family: var(--root-font-family);
