@@ -4,22 +4,26 @@ class TaskList extends Component {
     render() {
         const Tasks = () => {
             return (
-                <div className="task-content">
-                    <div className="task-content-title">Задача 1</div>
-                    <div className="task-content-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quisquam tempore magnam quaerat facilis quibusdam.
-                        Quisquam consectetur consequuntur odio, aliquid
-                        reiciendis saepe cupiditate itaque, blanditiis rerum
-                        alias dolorum numquam, pariatur perspiciatis?
-                    </div>
-                </div>
+                <>
+                    {this.props.data.map((item, index) => {
+                        return (
+                            <div className="task-content" key={item.id}>
+                                <div className="task-content-title">
+                                    {++index + ") " + item.taskName}
+                                </div>
+                                <div className="task-content-description">
+                                    {item.description}
+                                </div>
+                            </div>
+                        )
+                    })}
+                </>
             )
         }
         return (
             <div className="forms">
                 <div className="form-title">Список дел</div>
-                {<Tasks />}
+                {Tasks()}
             </div>
         )
     }

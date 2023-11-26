@@ -1,29 +1,36 @@
-import React, { useState } from "react"
+import React from "react"
 import uniqid from "uniqid"
 import "./FormAdd.css"
 const FormAdd = (props) => {
-    const [taskName, setTaskName] = useState("")
-    const [taskDescription, setTaskDescription] = useState("")
-    const [dataTasks, setDataTasks] = useState({})
+    const {
+        taskName,
+        setTaskName,
+        taskDescription,
+        setTaskDescription,
+        data,
+        setData,
+    } = props
     const handleChangeTaskName = (e) => {
         setTaskName(e.target.value)
     }
     const handleChangeTaskDescription = (e) => {
         setTaskDescription(e.target.value)
     }
-    const handleCheck = () => {
-        console.dir(props)
-    }
+
     const handleBtnAdd = () => {
         if (!taskName || !taskDescription) {
             alert("Enter task name and description !")
             return
         }
         let id = uniqid().toString()
-        setDataTasks({
-            ...dataTasks,
-            [id]: { task: taskName, description: taskDescription },
-        })
+        setData([
+            ...data,
+            {
+                id: id,
+                taskName: taskName,
+                description: taskDescription,
+            },
+        ])
         setTaskName("")
         setTaskDescription("")
         alert("Task added !")
@@ -49,9 +56,6 @@ const FormAdd = (props) => {
             />
             <button className="form-add-button" onClick={handleBtnAdd}>
                 Add
-            </button>
-            <button className="form-add-button" onClick={handleCheck}>
-                Check Data
             </button>
         </div>
     )
