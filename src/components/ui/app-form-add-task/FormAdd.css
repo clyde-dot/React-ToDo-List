@@ -2,7 +2,7 @@
     font-size: 20px;
     border: 0;
     padding: 7px;
-    overflow: hidden;
+    overflow:auto;
     border-radius: var(--border-radius);
 }
 .form-add-textarea {
@@ -23,7 +23,8 @@
 }
 .form-add-button:hover {
     background-color: var(--button-bg-color-effect);
+    transform: scale(0.98);
 }
 .form-add-button:active {
-    transform: scale(0.98);
+    transform: scale(0.96);
 }

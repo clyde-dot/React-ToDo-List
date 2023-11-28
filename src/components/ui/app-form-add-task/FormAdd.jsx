@@ -32,7 +32,6 @@ const FormAdd = (props) => {
             },
         ])
         localStorage.setItem("data", JSON.stringify(...data))
-        console.log(taskDescription)
         setTaskName("")
         setTaskDescription("")
     }
