@@ -31,9 +31,10 @@ const FormAdd = (props) => {
                 description: taskDescription,
             },
         ])
+        localStorage.setItem("data", JSON.stringify(...data))
+        console.log(taskDescription)
         setTaskName("")
         setTaskDescription("")
-        alert("Task added !")
     }
 
     return (
