@@ -1,39 +1,39 @@
 import React from "react"
 import uniqid from "uniqid"
 import "./FormAdd.css"
-const FormAdd = (props) => {
-    const {
-        taskName,
-        setTaskName,
-        taskDescription,
-        setTaskDescription,
-        data,
-        setData,
-    } = props
-    const handleChangeTaskName = (e) => {
-        setTaskName(e.target.value)
-    }
-    const handleChangeTaskDescription = (e) => {
-        setTaskDescription(e.target.value)
-    }
 
-    const handleBtnAdd = () => {
+import { db } from "../../../firebase"
+import { collection, addDoc } from "firebase/firestore"
+
+const FormAdd = ({
+    taskName,
+    setTaskName,
+    taskDescription,
+    setTaskDescription,
+}) => {
+    const handleBtnAdd = async () => {
+        //check null
         if (!taskName || !taskDescription) {
             alert("Enter task name and description !")
             return
         }
-        let id = uniqid().toString()
-        setData([
-            ...data,
-            {
-                id: id,
-                taskName: taskName,
-                description: taskDescription,
-            },
-        ])
-        localStorage.setItem("data", JSON.stringify(...data))
+
+        //save data
+        const id = uniqid().toString()
+        const title = taskName
+        const description = taskDescription
+        const completed = false
+
+        //Clear inputs
         setTaskName("")
         setTaskDescription("")
+
+        await addDoc(collection(db, "todos"), {
+            id,
+            title,
+            description,
+            completed,
+        })
     }
 
     return (
@@ -43,7 +43,9 @@ const FormAdd = (props) => {
                 className="form-add-data form-add-input"
                 type="text"
                 placeholder="Task name"
-                onChange={handleChangeTaskName}
+                onChange={(e) => {
+                    setTaskName(e.target.value)
+                }}
                 value={taskName || ""}
                 maxLength={100}
             />
@@ -52,7 +54,9 @@ const FormAdd = (props) => {
                 type="text"
                 placeholder="Description"
                 value={taskDescription}
-                onChange={handleChangeTaskDescription}
+                onChange={(e) => {
+                    setTaskDescription(e.target.value)
+                }}
             />
             <button className="form-add-button" onClick={handleBtnAdd}>
                 Add

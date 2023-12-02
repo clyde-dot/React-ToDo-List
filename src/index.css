@@ -9,6 +9,7 @@
     --header-footer-font-color: #ffffff;
     --body-bg-color: #fff;
     --anim-duration: 0.2s;
+    --anim-duration-slow: 0.4s;
 
     /*Main settings*/
     --container-bg-color: #023e8a;

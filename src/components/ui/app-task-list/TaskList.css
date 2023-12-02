@@ -18,3 +18,16 @@
     white-space: pre-wrap;
     line-height: 1.2;
 }
+.task-controller {
+    display: flex;
+    justify-content: space-between;
+}
+.task-controller-button {
+    transition: var(--anim-duration-slow);
+}
+.task-controller-button:hover {
+    transform: scale(0.95);
+}
+.task-controller-button:active {
+    transform: scale(0.85);
+}
