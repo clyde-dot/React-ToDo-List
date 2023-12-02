@@ -1,12 +1,11 @@
 :root {
     /*Colors*/
-    --white-color: #fff;
-    --black-color: #000000;
-    --root-color: #023e8a;
+    --color-white: #fff;
+    --color-black: #000000;
+    --root-background-color: #ececec;
+    --root-font-color: #000000;
 
     --root-font-family: Roboto, Arial, Helvetica, sans-serif;
-    --header-logo-color: rgb(255, 255, 255);
-    --header-footer-font-color: #ffffff;
     --body-bg-color: #fff;
     --anim-duration: 0.2s;
     --anim-duration-slow: 0.4s;

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import "./TaskList.css"
 
 import {
     collection,
@@ -11,9 +10,7 @@ import {
 } from "firebase/firestore"
 import { db } from "../../../firebase"
 
-import { FcLikePlaceholder } from "react-icons/fc"
-import { FcLike } from "react-icons/fc"
-import { FcEmptyTrash } from "react-icons/fc"
+import Accordion from "../Accordion/Accordion"
 
 export default function TaskList() {
     const [todos, setTodos] = useState([])
@@ -37,7 +34,6 @@ export default function TaskList() {
     const handleDelete = async (id) => {
         await deleteDoc(doc(db, "todos", id))
     }
-
     if (todos.length < 1 || todos === undefined) {
         return <></>
     }
@@ -46,32 +42,11 @@ export default function TaskList() {
             <div className="form-title">Список дел</div>
             {todos.map((todo) => {
                 return (
-                    <div className="task-content" key={todo.id}>
-                        <div className="task-content-title">{todo.title}</div>
-                        <pre className="task-content-description">
-                            {todo.description}
-                        </pre>
-                        <div className="task-controller">
-                            {!todo.completed ? (
-                                <FcLikePlaceholder
-                                    className="task-controller-button"
-                                    size="50px"
-                                    onClick={() => toggleComplete(todo)}
-                                />
-                            ) : (
-                                <FcLike
-                                    className="task-controller-button"
-                                    size="50px"
-                                    onClick={() => toggleComplete(todo)}
-                                />
-                            )}
-                            <FcEmptyTrash
-                                className="task-controller-button"
-                                size="50px"
-                                onClick={() => handleDelete(todo.id)}
-                            />
-                        </div>
-                    </div>
+                    <Accordion
+                        todo={todo}
+                        toggleComplete={toggleComplete}
+                        handleDelete={handleDelete}
+                    />
                 )
             })}
         </div>

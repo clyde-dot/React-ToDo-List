@@ -1,6 +1,6 @@
 .footer {
-    background-color: var(--root-color);
-    color: var(--header-footer-font-color);
+    background-color: var(--root-background-color);
+    color: var(--root-font-color);
     margin-top: auto;
     min-height: 10vh;
     display: flex;
