@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-ToDo-List/static/css/main.6bf3054d.css",
-    "main.js": "/React-ToDo-List/static/js/main.1b654db1.js",
+    "main.css": "/React-ToDo-List/static/css/main.1b7cfdc1.css",
+    "main.js": "/React-ToDo-List/static/js/main.e84f97f6.js",
     "static/media/roboto-latin-500-normal.woff2": "/React-ToDo-List/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/React-ToDo-List/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/React-ToDo-List/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -59,11 +59,11 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/React-ToDo-List/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/React-ToDo-List/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/React-ToDo-List/index.html",
-    "main.6bf3054d.css.map": "/React-ToDo-List/static/css/main.6bf3054d.css.map",
-    "main.1b654db1.js.map": "/React-ToDo-List/static/js/main.1b654db1.js.map"
+    "main.1b7cfdc1.css.map": "/React-ToDo-List/static/css/main.1b7cfdc1.css.map",
+    "main.e84f97f6.js.map": "/React-ToDo-List/static/js/main.e84f97f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.6bf3054d.css",
-    "static/js/main.1b654db1.js"
+    "static/css/main.1b7cfdc1.css",
+    "static/js/main.e84f97f6.js"
   ]
 }
