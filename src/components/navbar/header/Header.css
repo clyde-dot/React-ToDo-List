@@ -1,5 +1,5 @@
 .header-menu {
-    background-color: var(--root-background-color);
+    background: var(--root-background-color);
     color: var(--root-font-color);
     display: flex;
     flex-direction: column;
@@ -27,5 +27,5 @@
     transition: var(--anim-duration);
 }
 .header-menu-link:hover {
-    color: rgb(216, 216, 216);
+    color: var(--root-font-color-hover);
 }

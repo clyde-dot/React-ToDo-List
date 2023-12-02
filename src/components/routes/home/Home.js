@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import "./Home.css"
 
-import FormAdd from "../../ui/app-form-add-task/FormAdd"
-import TaskList from "../../ui/app-task-list/TaskList"
+import TodoAdd from "../../ui/app-form-add-task/TodoAdd"
+import Todos from "../../ui/app-task-list/Todos"
 
 export default function Home() {
     const [taskName, setTaskName] = useState()
@@ -11,16 +11,14 @@ export default function Home() {
     return (
         <>
             <div className="container">
-                <FormAdd
+                <TodoAdd
                     taskName={taskName}
                     setTaskName={setTaskName}
                     taskDescription={taskDescription}
                     setTaskDescription={setTaskDescription}
                 />
             </div>
-            <div className="container">
-                <TaskList />
-            </div>
+            <Todos />
         </>
     )
 }

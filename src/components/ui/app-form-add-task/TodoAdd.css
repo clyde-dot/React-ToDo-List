@@ -2,7 +2,7 @@
     font-size: 20px;
     border: 0;
     padding: 7px;
-    overflow:auto;
+    overflow: auto;
     border-radius: var(--border-radius);
 }
 .form-add-textarea {
@@ -12,7 +12,7 @@
 .form-add-button {
     border: none;
     background-color: var(--button-bg-color);
-    color: var(--root-color);
+    color: var(--button-font-color);
     border-radius: 12px;
     min-height: 40px;
     text-align: center;

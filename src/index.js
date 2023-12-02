@@ -6,9 +6,6 @@ import { BrowserRouter } from "react-router-dom"
 import "./reset.css"
 import "./index.css"
 
-//Setting Web Page
-import "./Settings"
-
 //Static elements
 
 import Header from "./components/navbar/header/Header"

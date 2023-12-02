@@ -1,6 +1,6 @@
 import React from "react"
 import uniqid from "uniqid"
-import "./FormAdd.css"
+import "./TodoAdd.css"
 
 import { db } from "../../../firebase"
 import { collection, addDoc } from "firebase/firestore"
@@ -38,7 +38,7 @@ const FormAdd = ({
 
     return (
         <div className="forms">
-            <div className="form-title">Add task</div>
+            <div className="form-title">Add ToDo</div>
             <input
                 className="form-add-data form-add-input"
                 type="text"

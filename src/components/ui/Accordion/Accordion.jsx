@@ -1,19 +1,41 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import "./Accordion.css"
 
 import { FcLikePlaceholder } from "react-icons/fc"
 import { FcLike } from "react-icons/fc"
 import { FcEmptyTrash } from "react-icons/fc"
-import { AiFillCaretRight } from "react-icons/ai"
+import { GoTriangleDown } from "react-icons/go"
 
-function Accordion({ todo, toggleComplete, handleDelete }) {
+function Accordion({ id, todo, toggleComplete, handleDelete }) {
+    const [openId, setId] = useState(null)
+    const itemRef = useRef(null)
     return (
-        <div className="task-content" key={todo.id}>
-            <div className="task-content-title">
-                <AiFillCaretRight size="30px" />
+        <li className="accordion-item">
+            <div
+                className="accordion-header"
+                onClick={() => (id === openId ? setId(null) : setId(id))}
+            >
+                <GoTriangleDown
+                    className={`accordion-arrow ${
+                        id === openId ? "active" : ""
+                    }`}
+                    size="30px"
+                />
                 <div>{todo.title}</div>
             </div>
-            <pre className="task-content-description">{todo.description}</pre>
+            <div
+                className="accordion-collapse"
+                style={
+                    id === openId
+                        ? { height: itemRef.current.scrollHeight }
+                        : { height: "0px" }
+                }
+            >
+                <pre className="accordion-body" ref={itemRef}>
+                    {todo.description}
+                </pre>
+            </div>
+
             <div className="task-controller">
                 {!todo.completed ? (
                     <FcLikePlaceholder
@@ -34,7 +56,7 @@ function Accordion({ todo, toggleComplete, handleDelete }) {
                     onClick={() => handleDelete(todo.id)}
                 />
             </div>
-        </div>
+        </li>
     )
 }
 

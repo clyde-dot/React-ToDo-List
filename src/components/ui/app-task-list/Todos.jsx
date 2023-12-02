@@ -9,7 +9,7 @@ import {
     updateDoc,
 } from "firebase/firestore"
 import { db } from "../../../firebase"
-
+import "./Todos.css"
 import Accordion from "../Accordion/Accordion"
 
 export default function TaskList() {
@@ -34,21 +34,27 @@ export default function TaskList() {
     const handleDelete = async (id) => {
         await deleteDoc(doc(db, "todos", id))
     }
-    if (todos.length < 1 || todos === undefined) {
-        return <></>
-    }
+
     return (
-        <div className="forms">
-            <div className="form-title">Список дел</div>
-            {todos.map((todo) => {
-                return (
-                    <Accordion
-                        todo={todo}
-                        toggleComplete={toggleComplete}
-                        handleDelete={handleDelete}
-                    />
-                )
-            })}
+        <div className="todos">
+            <div className="todos-title">Todo List</div>
+
+            {todos.length < 1 || todos === undefined ? (
+                <div className="todos-zero">There's nothing here yet...</div>
+            ) : (
+                <ul className="accordion">
+                    {todos.map((todo, id) => {
+                        return (
+                            <Accordion
+                                id={id}
+                                todo={todo}
+                                toggleComplete={toggleComplete}
+                                handleDelete={handleDelete}
+                            />
+                        )
+                    })}
+                </ul>
+            )}
         </div>
     )
 }
