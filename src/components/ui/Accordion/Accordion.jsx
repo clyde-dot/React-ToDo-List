@@ -40,19 +40,19 @@ function Accordion({ id, todo, toggleComplete, handleDelete }) {
                 {!todo.completed ? (
                     <FcLikePlaceholder
                         className="task-controller-button"
-                        size="50px"
+                        size="40px"
                         onClick={() => toggleComplete(todo)}
                     />
                 ) : (
                     <FcLike
                         className="task-controller-button"
-                        size="50px"
+                        size="40px"
                         onClick={() => toggleComplete(todo)}
                     />
                 )}
                 <FcEmptyTrash
                     className="task-controller-button"
-                    size="50px"
+                    size="40px"
                     onClick={() => handleDelete(todo.id)}
                 />
             </div>
